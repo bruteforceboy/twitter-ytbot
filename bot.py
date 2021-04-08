@@ -1,4 +1,4 @@
-# author: bruteforceboy
+# @author: bruteforceboy
 
 import tweepy
 import geocoder
@@ -44,26 +44,26 @@ yt_video = "https://www.youtube.com/watch?v=wvoBLb6QkKI\n"
 
 count = 0
 
-while True: 
-	if count % 6 == 0: 
-		# 30 minutes (like for follow)
-		search = ('#ifb OR #likeforfollow OR #followtrain')
-		nmTweets = 30
+while True:  
+	# (like for follow)
+	search = ('#ifb OR #likeforfollow OR #followtrain')
+	nmTweets = 30
 
-		for tweet in tweepy.Cursor(api.search, search, lang='en').items(nmTweets):
-			# print(f"{tweet.user.name} said {tweet.text}")
-			if not tweet.favorited:
-				try:
-					tweet.favorite()
-					#tweet.retweet()
-					time.sleep(5)
-				except: 
-					print("error while liking")
-		#For Followback to the Followers            	
-		for follower in tweepy.Cursor(api.followers).items(1):
-			if not follower.following:
-				if follower.friends_count > 50:
-					follower.follow()
+	for tweet in tweepy.Cursor(api.search, search, lang = 'en').items(nmTweets):
+		# print(f"{tweet.user.name} said {tweet.text}")
+		if not tweet.favorited:
+			try:
+				tweet.favorite()
+				#tweet.retweet()
+				time.sleep(5)
+			except: 
+				print("error while liking")
+	
+	# For Followback to the Followers            	
+	for follower in tweepy.Cursor(api.followers).items(1):
+		if not follower.following:
+			if follower.friends_count > 50:
+				follower.follow()
 
 	orig = lines[random.randint(0, len(lines) - 1)] + yt_video
 	tweet = orig
@@ -77,6 +77,8 @@ while True:
 
 	if len(tweet) > 0:
 		api.update_status(tweet)
+	
 	print("proc " + str(count) + " was successful!")
 	count += 1
-	time.sleep(300)
+	
+	time.sleep(600)
