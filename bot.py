@@ -1,3 +1,5 @@
+#author: bruteforceboy
+
 import tweepy
 import geocoder
 import time
