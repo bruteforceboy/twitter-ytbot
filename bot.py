@@ -46,7 +46,7 @@ video = '\nhttps://twitter.com/i/status/1300788348206940162\n'
 count = 0
 
 while True:  
-	(like for follow)
+	# (like for follow)
 	search = ('#ifb OR #likeforfollow OR #followtrain')
 	nmTweets = 30
 
