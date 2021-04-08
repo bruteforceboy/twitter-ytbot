@@ -6,6 +6,7 @@ import time
 import random
 import os
 from os import environ
+from datetime import datetime
 
 CONSUMER_KEY = environ['CONSUMER_KEY']
 CONSUMER_SECRET = environ['CONSUMER_SECRET']
@@ -66,7 +67,7 @@ while True:
 			if follower.friends_count > 50:
 				follower.follow()
 
-	orig = lines[random.randint(0, len(lines) - 1)] + yt_link + video + " "
+	orig = str(datetime.time(datetime.now())) + lines[random.randint(0, len(lines) - 1)] + yt_link + video + " "
 	tweet = orig
 	for trend in trends: 
 		new_tweet = tweet + trend + " "
