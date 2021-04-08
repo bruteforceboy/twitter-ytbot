@@ -48,7 +48,7 @@ while True:
 	if count % 6 == 0: 
 		# 30 minutes (like for follow)
 		search = ('#ifb OR #likeforfollow OR #followtrain')
-		nmTweets = 20
+		nmTweets = 30
 
 		for tweet in tweepy.Cursor(api.search, search, lang='en').items(nmTweets):
 			# print(f"{tweet.user.name} said {tweet.text}")
@@ -79,4 +79,4 @@ while True:
 		api.update_status(tweet)
 	print("proc " + str(count) + " was successful!")
 	count += 1
-	time.sleep(90)
+	time.sleep(300)
