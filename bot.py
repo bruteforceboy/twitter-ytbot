@@ -42,14 +42,14 @@ lines = ["If you want a laugh then this video is for you ",\
 			"Check out my video ", "Yo! check this video out "]
 
 yt_link = 'https://t.co/s09dtsZKlZ?amp=1'
-video = '\nhttps://twitter.com/i/status/1300788348206940162\n'
+video = '\nhttps://twitter.com/i/status/1300788348206940162 '
 
 count = 0
 
 while True:  
 	# (like for follow)
 	search = ('#ifb OR #likeforfollow OR #followtrain')
-	nmTweets = 30
+	nmTweets = 50
 
 	for tweet in tweepy.Cursor(api.search, search, lang = 'en').items(nmTweets):
 		# print(f"{tweet.user.name} said {tweet.text}")
@@ -67,7 +67,7 @@ while True:
 			if follower.friends_count > 50:
 				follower.follow()
 
-	orig = str(datetime.time(datetime.now())) + lines[random.randint(0, len(lines) - 1)] + yt_link + video + " "
+	orig = str(datetime.time(datetime.now())) + " " + lines[random.randint(0, len(lines) - 1)] + yt_link + video + " "
 	tweet = orig
 	for trend in trends: 
 		new_tweet = tweet + trend + " "
