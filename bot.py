@@ -54,7 +54,7 @@ while True:
 		if not tweet.favorited:
 			try:
 				tweet.favorite()
-				#tweet.retweet()
+				# tweet.retweet()
 				time.sleep(5)
 			except: 
 				print("error while liking")
