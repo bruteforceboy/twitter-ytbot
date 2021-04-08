@@ -64,7 +64,7 @@ while True:
 	# For Followback to the Followers            	
 	for follower in tweepy.Cursor(api.followers).items(1):
 		if not follower.following:
-			if follower.friends_count > 50:
+			if follower.friends_count > 10:
 				follower.follow()
 
 	orig = str(datetime.time(datetime.now())) + " " + lines[random.randint(0, len(lines) - 1)] + yt_link + video + " "
