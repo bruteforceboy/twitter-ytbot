@@ -1,4 +1,4 @@
-#author: bruteforceboy
+# author: bruteforceboy
 
 import tweepy
 import geocoder
