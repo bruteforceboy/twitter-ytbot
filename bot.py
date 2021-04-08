@@ -40,12 +40,13 @@ trends = set([trend['name'] for trend in trends_result[0]['trends']])
 lines = ["If you want a laugh then this video is for you ",\
 			"Check out my video ", "Yo! check this video out "]
 
-yt_video = "https://www.youtube.com/watch?v=wvoBLb6QkKI\n"
+yt_link = 'https://t.co/s09dtsZKlZ?amp=1'
+video = '\nhttps://twitter.com/i/status/1300788348206940162\n'
 
 count = 0
 
 while True:  
-	# (like for follow)
+	(like for follow)
 	search = ('#ifb OR #likeforfollow OR #followtrain')
 	nmTweets = 30
 
@@ -65,7 +66,7 @@ while True:
 			if follower.friends_count > 50:
 				follower.follow()
 
-	orig = lines[random.randint(0, len(lines) - 1)] + yt_video
+	orig = lines[random.randint(0, len(lines) - 1)] + yt_link + video + " "
 	tweet = orig
 	for trend in trends: 
 		new_tweet = tweet + trend + " "
