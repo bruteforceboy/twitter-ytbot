@@ -49,7 +49,7 @@ count = 0
 while True:  
 	# (like for follow)
 	search = ('#ifb OR #likeforfollow OR #followtrain OR #likeforlike OR #like4follow OR #followforfollow')
-	nmTweets = 50
+	nmTweets = 20
 
 	for tweet in tweepy.Cursor(api.search, search, lang = 'en').items(nmTweets):
 		# print(f"{tweet.user.name} said {tweet.text}")
@@ -83,4 +83,4 @@ while True:
 	print("proc " + str(count) + " was successful!")
 	count += 1
 	
-	time.sleep(300)
+	time.sleep(600)
