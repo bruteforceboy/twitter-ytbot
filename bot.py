@@ -48,7 +48,7 @@ count = 0
 
 while True:  
 	# (like for follow)
-	search = ('#ifb OR #likeforfollow OR #followtrain')
+	search = ('#ifb OR #likeforfollow OR #followtrain OR #likeforlike OR #like4follow OR #followforfollow')
 	nmTweets = 50
 
 	for tweet in tweepy.Cursor(api.search, search, lang = 'en').items(nmTweets):
@@ -67,20 +67,20 @@ while True:
 			if follower.friends_count > 10:
 				follower.follow()
 
-	orig = str(datetime.time(datetime.now())) + " " + lines[random.randint(0, len(lines) - 1)] + yt_link + video + " "
-	tweet = orig
-	for trend in trends: 
-		new_tweet = tweet + trend + " "
-		if len(new_tweet) > 186: 
-			api.update_status(tweet)
-			tweet = orig + trend + " "
-		else: 
-			tweet = new_tweet
+	# orig = str(datetime.time(datetime.now())) + " " + lines[random.randint(0, len(lines) - 1)] + yt_link + video + " "
+	# tweet = orig
+	# for trend in trends: 
+	# 	new_tweet = tweet + trend + " "
+	# 	if len(new_tweet) > 186: 
+	# 		api.update_status(tweet)
+	# 		tweet = orig + trend + " "
+	# 	else: 
+	# 		tweet = new_tweet
 
-	if len(tweet) > 0:
-		api.update_status(tweet)
+	# if len(tweet) > 0:
+	# 	api.update_status(tweet)
 	
 	print("proc " + str(count) + " was successful!")
 	count += 1
 	
-	time.sleep(600)
+	time.sleep(300)
