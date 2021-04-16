@@ -48,8 +48,11 @@ count = 0
 
 while True:  
 	# (like for follow)
-	search = ('#ifb OR #likeforfollow OR #followtrain OR #likeforlike OR #like4follow OR #followforfollow')
-	nmTweets = 20
+	search = ('#follow OR #f4f OR #followme OR #followforfollow OR #follow4follow OR\
+		#teamfollowback OR #followher OR #followbackteam OR #followhim OR #followall\
+		OR #followalways OR #followback OR #me OR #love\
+		OR #pleasefollow OR #follows OR #follower OR #following OR #ifb OR #followtrain')
+	nmTweets = 30
 
 	for tweet in tweepy.Cursor(api.search, search, lang = 'en').items(nmTweets):
 		# print(f"{tweet.user.name} said {tweet.text}")
